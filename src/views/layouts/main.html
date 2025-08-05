@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jolly Jabs</title>
+    <meta name="description" content="A showcase of SQL injection in action."/>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+
+    <script>
+      document.head.appendChild(Object.assign(document.createElement("link"), {rel: "icon", href: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💉</text></svg>"}))
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>💉 Jolly Jabs 💉</h1>
+      <p>We're all about injections!</p>
+      {{#if user}}
+      <nav>
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+      </nav>
+      {{/if}}
+    </header>
+
+    <main>
+      {{{ body }}}
+    </main>
+  </body>
+</html>

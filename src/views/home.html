@@ -1,0 +1,20 @@
+<h2 id="forms">DNS Tool</h2>
+
+<form action="/cmd/ping">
+  <p>
+    <label for="ip_addr">Address</label>
+    <input
+      id="ip_addr"
+      style="width: 100%;"
+      type="text"
+      name="ip_addr"
+      required
+    />
+  </p>
+  <button>DNS Records</button>
+  {{#if output}}
+  <pre>
+    {{output}}
+  </pre>
+  {{/if}}
+</form>
