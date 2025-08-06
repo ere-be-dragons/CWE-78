@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
   res.render('home');
 });
 
-app.get('/cmd/ping', (req, res) => {
+app.get('/cmd/dig', (req, res) => {
   exec(`dig ${req.query.ip_addr}`, (err, stdout) => {
     res.render('home', {output: err?.toString() ?? stdout.toString()});
 
