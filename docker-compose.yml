@@ -1,0 +1,35 @@
+services:
+  alice:
+    build: .
+    environment:
+      DATABASE_URL: postgres://application:a38c83eef340879d3@database:5432/main
+  bob:
+    build: .
+    environment:
+      DATABASE_URL: postgres://application:e59fa8775349a061b@database:5432/main
+  carol:
+    build: .
+    environment:
+      DATABASE_URL: postgres://application:8813e908e35dfddf5@database:5432/main
+  david:
+    build: .
+    environment:
+      DATABASE_URL: postgres://application:485f4bb069cd4b28b@database:5432/main
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    restart: unless-stopped
+    profiles:
+      - with-ngrok
+    command:
+      - "start"
+      - "--all"
+      - "--config"
+      - "/etc/ngrok.yml"
+    volumes:
+      - ./ngrok.yml:/etc/ngrok.yml
+    links:
+      - alice
+      - bob
+      - carol
+      - david

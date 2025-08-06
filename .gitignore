@@ -142,3 +142,6 @@ vite.config.ts.timestamp-*
 *.sqlite
 *.sqlite3
 *.db
+
+# ngrok config file
+ngrok.yml
